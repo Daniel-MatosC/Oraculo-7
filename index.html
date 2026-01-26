@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <title>Oráculo 7</title>
+</head>
+<body class="intro-active">
+
+    <!-- Vídeo de Abertura (Vinheta) -->
+    <div class="intro-overlay">
+        <video src="./assets/video-fundo.mp4" autoplay muted playsinline preload="auto" class="video-abertura"></video>
+    </div>
+
+    <!-- Vídeo de Fundo Geral -->
+    <video src="./assets/video-fundo-geral.mp4" autoplay loop muted playsinline disablePictureInPicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" class="video-fundo-geral"></video>
+
+    <div class="mae-header">
+        <header>
+            <img src="./assets/logo-oraculo.png" alt="logo oráculo 7" class="logo-oraculo-header">
+            <nav>
+                <a href="#inicio">Início</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </header>
+    </div>
+
+    <main>
+        <div class="box-principal" id="inicio">
+            <video src="./assets/video-fundo.mp4" autoplay loop muted playsinline disablePictureInPicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" class="fundo-header"></video>
+            <img src="./assets/oraculo (1).png" alt="mulher oraculo segurando uma bola de cristal" class="img-oraculo">
+            <a href="https://wa.me/5511966453789?text=Ol%C3%A1!%20Quero%20agendar%20uma%20consulta" target="_blank" class="botao-agendar">Agendar Consulta</a>
+        </div>
+
+        <div class="box-sobre-oraculo" id="sobre">
+            <img src="./assets/fundo-texto.png" alt="quadro dourado com flores" class="img-fundo-p">
+            <div class="conteudo-sobre">
+                <p class="titulo-sobre">Sobre a Oráculo</p>
+                <div class="texto-lorem">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo nisi et deleniti placeat animi doloribus quos repellendus quas, consequatur commodi veritatis dicta dolores tempore, odio ipsum quo? Quas, minus voluptas.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt blanditiis cupiditate error esse fuga facere expedita inventore optio. Veniam error dolores eaque ducimus sequi aut exercitationem consequatur pariatur quo est!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt blanditiis cupiditate error esse fuga facere expedita inventore optio. Veniam error dolores eaque ducimus sequi aut exercitationem consequatur pariatur quo est! Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid molestias incidunt nihil rerum soluta explicabo eaque ex? Perspiciatis maxime corporis fugit mollitia nisi soluta culpa cupiditate praesentium minus ducimus. Delectus.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione quis, eius autem ad nisi, veritatis fugit, voluptatibus illum expedita similique perferendis nulla vel esse aliquam aspernatur repellendus nobis? Voluptate, sed?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem id perspiciatis error similique, corporis tempora optio qui cupiditate obcaecati voluptate dolor deserunt. Enim, maxime repudiandae iure ab mollitia hic accusantium.</p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur fugit aliquid, laudantium, facere ea rem sequi doloribus soluta sit provident incidunt. Laudantium quidem ab doloribus, dolore totam magnam fuga autem.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="divisoria">
+            <img src="./assets/divisoria.png" alt="divisoria de pagina" class="img-divisoria">
+        </div>
+
+        <h1 class="meus-servicos" id="servicos">Meus Serviços</h1>
+        <div class="carrosel-servicos">
+            <img src="./assets/img-fundo-carrosel.png" alt="quadro dourado com flores" class="img-fundo-carrosel">
+            
+            <button class="seta seta-esquerda" onclick="moverCarrossel(-1)">&#10094;</button>
+            
+            <div class="servico">
+                <img src="./assets/carta-7-costas.png" alt="serviço 1">
+                <p>Consultoria</p>
+            </div>
+            <div class="servico">
+                <img src="./assets/carta-7-costas.png" alt="serviço 2">
+                <p>Leitura</p>
+            </div>
+            <div class="servico">
+                <img src="./assets/carta-7-costas.png" alt="serviço 3">
+                <p>Cartomancia</p>
+            </div>
+            <div class="servico">
+                <img src="./assets/carta-7-costas.png" alt="serviço 4">
+                <p>Cartomancia</p>
+            </div>
+            <div class="servico">
+                <img src="./assets/carta-7-costas.png" alt="serviço 5">
+                <p>Cartomancia</p>
+            </div>
+            <div class="servico">
+                <img src="./assets/carta-7-costas.png" alt="serviço 6">
+                <p>Cartomancia</p>
+            </div>
+
+            <button class="seta seta-direita" onclick="moverCarrossel(1)">&#10095;</button>
+        </div>
+
+        <div class="div-footer" id="contato">
+            <footer>
+                <img src="./assets/borda-texto-fotter.png" alt="borda de texto do footer" class="img-borda-footer">
+                <img src="./assets/bola-7.png" alt="bola 7" class="img-bola-7-footer">
+                <div class="links-footer">
+                    <p class="p-social-footer">Social Links</p>
+                    <a href="https://www.instagram.com/bordo.ancestral?igsh=Z2lxYzB2dGpmMWl1" target="_blank"> <img src="./assets/instagram-svgrepo-com.svg" alt="logo instagram" class="logo-instagram"> Instagram</a>
+                </div>
+
+                <div class="contato-footer">
+                    <p class="p-contato-footer">Contato</p>
+                    <a href="https://wa.me/5511966453789?text=Ol%C3%A1!%20Quero%20agendar%20uma%20consulta" target="_blank"> <img src="./assets/whatsapp-svgrepo-com.svg" alt="logo whatsapp" class="logo-whatsapp">Mande-me uma mensagem</a>
+                    <a href="mailto:bordo.ancestral@gmail.com?subject=Dúvida&body=Olá, gostaria de saber mais sobre seus serviços." target="_blank" class="logo-email-a"> <img src="./assets/gmail-svgrepo-com.svg" alt="logo email" class="logo-email">Mande-me um email</a>
+                </div>
+
+                <p class="p-footer-final">© 2026 Ana Bea Oráculo 7. Todos os direitos reservados.</p>
+            </footer>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

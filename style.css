@@ -1,0 +1,416 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "PT Serif", serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 140px; /* Compensa a altura do header fixo */
+}
+
+body {
+    background-color: transparent; /* Permite ver o vídeo fixo atrás */
+}
+
+.video-fundo-geral {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -10; /* Garante que fique atrás de tudo */
+}
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    justify-content: center;
+}
+
+.logo-oraculo-header {
+    width: 102px;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 29%;
+}
+
+.mae-header {
+    background-color: black;
+    border-bottom: 3px solid #D4AF37;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100000; /* Garante que fique acima da vinheta (que é 99999) */
+}
+
+nav a {
+    color: #D4AF37;
+    text-decoration: none;
+    font-size: 20px;
+    padding-left: 34px;
+    cursor: pointer;
+}
+
+nav a:hover {
+    color: rgb(234, 193, 61);
+    filter: drop-shadow(0 0 10px #e3bc3b);
+}
+
+nav {
+    transition: opacity 1s ease;
+}
+
+body.intro-active nav {
+    opacity: 0;
+    pointer-events: none;
+    transition: none;
+}
+
+.box-principal {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fundo-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: fill;
+    z-index: -1;
+    -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+}
+
+.img-oraculo {
+    width: 325px;
+    height: auto;
+    margin-top: 125px;
+    border-radius: 15px;
+}
+
+.box-principal .botao-agendar {
+    margin-top: 30px;
+    padding: 12px 30px;
+    background: linear-gradient(150deg,rgba(214, 180, 69, 1) 35%, rgba(255, 222, 112, 1) 75%);
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 15px;
+    text-decoration: none;
+    color: black;
+}
+
+.box-principal .botao-agendar:hover {
+    background: linear-gradient(197deg,rgba(214, 180, 69, 1) 35%, rgba(255, 222, 112, 1) 75%);
+    font-size: 18px;
+    filter: drop-shadow(0 0 10px #D4AF37);
+}
+
+.box-sobre-oraculo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.img-fundo-p {
+    width: 90%;
+    max-width: 1200px;
+    height: auto;
+    mix-blend-mode: screen; /* Mescla a imagem com o fundo como se fosse luz */
+    opacity: 0.8; /* Leve transparência para integrar melhor */
+    -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%); /* Suaviza as bordas */
+    mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+}
+
+.conteudo-sobre {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    text-align: center;
+}
+
+.titulo-sobre {
+    font-size: 48px;
+    color: #d7bb7d;
+    margin-top: 40px;
+    font-weight: bold;
+}
+
+.texto-lorem {
+    column-count: 2;
+    column-gap: 0px;
+    width: 100%;
+    margin-top: 66px;
+    margin-bottom: auto;
+    padding-right: 90px;
+}
+
+.texto-lorem p {
+    color: #bbab8a;
+    font-size: 15px;
+    text-align: justify;
+    line-height: 1.5;
+    width: 418px;
+    margin-left: 100px;
+    padding: 10px;
+}
+
+.divisoria {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-divisoria {
+    width: 75%;
+    height: auto;
+    margin-top: 80px;
+    padding-bottom: 70px;
+    mix-blend-mode: screen; /* Mescla a imagem com o fundo como se fosse luz */
+    opacity: 0.8; /* Leve transparência para integrar melhor */
+    -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%); /* Suaviza as bordas */
+    mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+}
+
+/* Estilos do Carrossel */
+.carrosel-servicos {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Altura suficiente para as cartas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 50px;
+    border-top: 1px solid #a3872a;
+    border-bottom: 1px solid #a3872a;
+}
+
+.meus-servicos {
+    font-size: 48px;
+    color: #d7bb7d;
+    margin-top: 40px;
+    font-weight: bold;
+    margin-left: 39.5%;
+}
+
+.img-fundo-carrosel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.servico {
+    position: absolute;
+    width: 280px; /* Largura da carta */
+    height: 400px;
+    background-color: transparent;
+    text-align: center;
+    transition: all 0.5s ease-in-out; /* Animação suave */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.servico img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.servico p {
+    color: #d7bb7de6;
+    font-size: 20px;
+    margin-top: -61px;
+    font-weight: bold;
+    background-color: rgb(0 0 0 / 17%);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Botões de navegação */
+.seta {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: #D4AF37;
+    border: none;
+    font-size: 50px;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 100;
+    transition: 0.3s;
+}
+
+.seta:hover {
+    transform: translateY(-50%) scale(1.2);
+    color: #fff;
+}
+
+.seta-esquerda { left: 20px; }
+.seta-direita { right: 20px; }
+
+/* Estilos do Footer */
+.div-footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 50px;
+    padding-bottom: 20px;
+}
+
+footer {
+    position: relative;
+    width: 90%; /* Um pouco menor que o carrossel */
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-borda-footer {
+    width: 116%;
+    height: auto;
+    mix-blend-mode: screen; /* Mescla a imagem com o fundo como se fosse luz */
+    opacity: 0.8; /* Leve transparência para integrar melhor */
+    -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%); /* Suaviza as bordas */
+    mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+}
+
+.img-bola-7-footer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    z-index: 10;
+    transition: filter 0.3s ease-in-out;
+}
+
+.img-bola-7-footer:hover, .img-oraculo:hover {
+    filter: drop-shadow(0 0 15px #D4AF37);
+}
+
+.img-oraculo:hover {
+    filter: drop-shadow(0 0 3px #D4AF37);
+}
+
+.links-footer {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contato-footer {
+    position: absolute;
+    top: 50%;
+    right: 8%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-end; /* Alinha o texto à direita */
+}
+
+.p-social-footer, .p-contato-footer {
+    color: #d7bb7d;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.links-footer a, .contato-footer a {
+    color: #d4af37c4;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.links-footer a:hover, .contato-footer a:hover {
+    color: white;
+}
+
+.logo-instagram, .logo-facebook, .logo-whatsapp, .logo-email {
+    width: 25px;
+    height: auto;
+}
+
+.p-footer-final {
+    position: absolute;
+    bottom: 87px;
+    color: #d4af37ad;
+    font-size: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Estilização da Barra de Rolagem (Scrollbar) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000000; /* Fundo preto para a trilha */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #D4AF37; /* Cor dourada do site */
+    border-radius: 20px; /* Bordas arredondadas */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #eac354; /* Dourado mais claro ao passar o mouse */
+}
+
+/* Estilos da Vinheta de Abertura */
+.intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 99999; /* Garante que fique na frente de tudo */
+    transition: opacity 1s ease-out; /* Efeito de desaparecimento suave */
+}
+
+.video-abertura {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

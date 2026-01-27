@@ -13,7 +13,7 @@
 
     <!-- Vídeo de Abertura (Vinheta) -->
     <div class="intro-overlay">
-        <video src="./assets/video-fundo.mp4" autoplay muted playsinline preload="auto" class="video-abertura"></video>
+        <video src="./assets/video-fundo2.mp4" autoplay muted playsinline preload="auto" class="video-abertura"></video>
     </div>
 
     <!-- Vídeo de Fundo Geral -->
@@ -22,6 +22,7 @@
     <div class="mae-header">
         <header>
             <img src="./assets/logo-oraculo.png" alt="logo oráculo 7" class="logo-oraculo-header">
+            <button class="menu-hamburguer" aria-label="Abrir menu">&#9776;</button>
             <nav>
                 <a href="#inicio">Início</a>
                 <a href="#sobre">Sobre</a>
@@ -33,7 +34,7 @@
 
     <main>
         <div class="box-principal" id="inicio">
-            <video src="./assets/video-fundo.mp4" autoplay loop muted playsinline disablePictureInPicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" class="fundo-header"></video>
+            <video src="./assets/video-fundo2.mp4" autoplay loop muted playsinline disablePictureInPicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" class="fundo-header"></video>
             <img src="./assets/oraculo (1).png" alt="mulher oraculo segurando uma bola de cristal" class="img-oraculo">
             <a href="https://wa.me/5511966453789?text=Ol%C3%A1!%20Quero%20agendar%20uma%20consulta" target="_blank" class="botao-agendar">Agendar Consulta</a>
         </div>
@@ -65,27 +66,23 @@
             
             <div class="servico">
                 <img src="./assets/carta-7-costas.png" alt="serviço 1">
-                <p>Consultoria</p>
+                <p>Pergunta Individual</p>
             </div>
             <div class="servico">
                 <img src="./assets/carta-7-costas.png" alt="serviço 2">
-                <p>Leitura</p>
+                <p>Chá e Magia</p>
             </div>
             <div class="servico">
                 <img src="./assets/carta-7-costas.png" alt="serviço 3">
-                <p>Cartomancia</p>
+                <p>Caminho Traçado</p>
             </div>
             <div class="servico">
                 <img src="./assets/carta-7-costas.png" alt="serviço 4">
-                <p>Cartomancia</p>
+                <p>Auto Conhecimento</p>
             </div>
             <div class="servico">
                 <img src="./assets/carta-7-costas.png" alt="serviço 5">
-                <p>Cartomancia</p>
-            </div>
-            <div class="servico">
-                <img src="./assets/carta-7-costas.png" alt="serviço 6">
-                <p>Cartomancia</p>
+                <p>Mesa Real</p>
             </div>
 
             <button class="seta seta-direita" onclick="moverCarrossel(1)">&#10095;</button>
@@ -110,6 +107,19 @@
             </footer>
         </div>
     </main>
+
+    <!-- Modal de Detalhes do Serviço -->
+    <div id="modal-servico" class="modal-overlay">
+        <div class="modal-card">
+            <button class="fechar-modal" onclick="fecharModal()">&times;</button>
+            <h2 id="modal-titulo">Título do Serviço</h2>
+            <div id="modal-texto" class="modal-texto-scroll">
+                <!-- O texto será inserido aqui pelo JavaScript -->
+            </div>
+            <a href="#" id="modal-botao-agendar" target="_blank" class="botao-modal">Agendar este serviço</a>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

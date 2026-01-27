@@ -19,9 +19,10 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 130vh; /* Altura extra para permitir o movimento do parallax sem criar buracos */
     object-fit: cover;
-    z-index: -10; /* Garante que fique atrás de tudo */
+    z-index: -999; /* Garante que fique bem atrás de tudo */
+    pointer-events: none;
 }
 
 header {
@@ -40,12 +41,22 @@ header {
 }
 
 .mae-header {
-    background-color: black;
-    border-bottom: 3px solid #D4AF37;
+    background-color: #3C0316;
+    border-bottom: 3px solid #d4af37d6;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 100000; /* Garante que fique acima da vinheta (que é 99999) */
+}
+
+.menu-hamburguer {
+    display: none; /* Escondido em telas grandes */
+    background: none;
+    border: none;
+    color: #D4AF37;
+    font-size: 35px;
+    cursor: pointer;
+    padding: 5px;
 }
 
 nav a {
@@ -76,6 +87,7 @@ body.intro-active nav {
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 0; /* Garante contexto de empilhamento para o vídeo interno */
 }
 
 .fundo-header {
@@ -84,10 +96,10 @@ body.intro-active nav {
     left: 0;
     width: 100%;
     height: 100vh;
-    object-fit: fill;
+    object-fit: cover; /* Corrige o vídeo em telas 1024-1399px para preencher tudo sem distorcer */
     z-index: -1;
     -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
 }
 
 .img-oraculo {
@@ -113,7 +125,7 @@ body.intro-active nav {
 .box-principal .botao-agendar:hover {
     background: linear-gradient(197deg,rgba(214, 180, 69, 1) 35%, rgba(255, 222, 112, 1) 75%);
     font-size: 18px;
-    filter: drop-shadow(0 0 10px #D4AF37);
+    filter: drop-shadow(0 0 15px #3E080F);
 }
 
 .box-sobre-oraculo {
@@ -130,9 +142,6 @@ body.intro-active nav {
     max-width: 1200px;
     height: auto;
     mix-blend-mode: screen; /* Mescla a imagem com o fundo como se fosse luz */
-    opacity: 0.8; /* Leve transparência para integrar melhor */
-    -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%); /* Suaviza as bordas */
-    mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
 }
 
 .conteudo-sobre {
@@ -166,7 +175,7 @@ body.intro-active nav {
 }
 
 .texto-lorem p {
-    color: #bbab8a;
+    color: #baa271;
     font-size: 15px;
     text-align: justify;
     line-height: 1.5;
@@ -186,9 +195,8 @@ body.intro-active nav {
     width: 75%;
     height: auto;
     margin-top: 80px;
-    padding-bottom: 70px;
-    mix-blend-mode: screen; /* Mescla a imagem com o fundo como se fosse luz */
-    opacity: 0.8; /* Leve transparência para integrar melhor */
+    padding-bottom: 30px; /* Diminuída a distância para o .meus-servicos */
+    mix-blend-mode: screen;
     -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%); /* Suaviza as bordas */
     mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
 }
@@ -210,7 +218,7 @@ body.intro-active nav {
 .meus-servicos {
     font-size: 48px;
     color: #d7bb7d;
-    margin-top: 40px;
+    margin-top: 10px; /* Diminuída a margem superior */
     font-weight: bold;
     margin-left: 39.5%;
 }
@@ -242,16 +250,15 @@ body.intro-active nav {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
 .servico p {
-    color: #d7bb7de6;
+    color: #c09d4f;
     font-size: 20px;
     margin-top: -61px;
     font-weight: bold;
-    background-color: rgb(0 0 0 / 17%);
-    padding: 5px 10px;
+    background-color: rgb(35 31 19 / 64%);
+    padding: 3px 5px;
     border-radius: 5px;
 }
 
@@ -288,61 +295,54 @@ body.intro-active nav {
 }
 
 footer {
-    position: relative;
-    width: 90%; /* Um pouco menor que o carrossel */
+        width: 90%; /* Um pouco menor que o carrossel */
     max-width: 1200px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    background: linear-gradient(150deg, #231f13 0%, #3C0316 100%);
+    border: 2px solid #D4AF37;
+    border-radius: 20px;
+    padding: 30px 50px;
+    flex-wrap: wrap;
 }
 
 .img-borda-footer {
-    width: 116%;
-    height: auto;
-    mix-blend-mode: screen; /* Mescla a imagem com o fundo como se fosse luz */
-    opacity: 0.8; /* Leve transparência para integrar melhor */
-    -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%); /* Suaviza as bordas */
-    mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+    display: none;
 }
 
 .img-bola-7-footer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 150px;
-    z-index: 10;
+    position: static;
+    transform: none;
+    width: 120px;
+    margin-left: 53px;
     transition: filter 0.3s ease-in-out;
+    order: 2; /* Fica no meio em telas grandes */
 }
 
 .img-bola-7-footer:hover, .img-oraculo:hover {
-    filter: drop-shadow(0 0 15px #D4AF37);
-}
-
-.img-oraculo:hover {
-    filter: drop-shadow(0 0 3px #D4AF37);
+    filter: drop-shadow(0 0 15px #3E080F);
 }
 
 .links-footer {
-    position: absolute;
-    top: 50%;
-    left: 8%;
-    transform: translateY(-50%);
+    position: static;
+    transform: none;
     display: flex;
     flex-direction: column;
     gap: 15px;
+    order: 1;
 }
 
 .contato-footer {
-    position: absolute;
-    top: 50%;
-    right: 8%;
-    transform: translateY(-50%);
+    position: static;
+    transform: none;
     display: flex;
     flex-direction: column;
     gap: 15px;
     align-items: flex-end; /* Alinha o texto à direita */
+    order: 3;
 }
+
 
 .p-social-footer, .p-contato-footer {
     color: #d7bb7d;
@@ -371,12 +371,14 @@ footer {
 }
 
 .p-footer-final {
-    position: absolute;
-    bottom: 87px;
+    position: static;
     color: #d4af37ad;
     font-size: 15px;
     width: 100%;
     text-align: center;
+    margin-top: 30px;
+    order: 4;
+    margin-right: 48px;
 }
 
 /* Estilização da Barra de Rolagem (Scrollbar) */
@@ -413,4 +415,381 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* Estilos do Modal (Caixa sobre a página) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Fundo escuro transparente */
+    z-index: 200000; /* Acima de tudo, inclusive do header */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.modal-overlay.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-card {
+    position: relative;
+    width: 350px;
+    height: 550px; /* Formato retangular tipo carta */
+    background: linear-gradient(150deg, #231f13 0%, #3C0316 100%);
+    border: 2px solid #D4AF37;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transform: scale(0.8);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-overlay.ativo .modal-card {
+    transform: scale(1);
+}
+
+.fechar-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #D4AF37;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.fechar-modal:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+#modal-titulo {
+    color: #D4AF37;
+    font-size: 28px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #D4AF37;
+    padding-bottom: 10px;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.modal-texto-scroll {
+    width: 100%;
+    flex: 1; /* Ocupa o espaço disponível, deixando lugar para o botão */
+    overflow-y: auto; /* Permite rolar o texto se for muito grande */
+    color: #baa271;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+    padding-right: 20px; /* Espaço aumentado para a scrollbar */
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Scrollbar personalizada para o modal */
+.modal-texto-scroll::-webkit-scrollbar {
+    width: 4px;
+}
+
+.modal-texto-scroll::-webkit-scrollbar-thumb {
+    background-color: #D4AF37;
+    border-radius: 5px;
+}
+
+/* Espaçamento entre parágrafos dentro do modal */
+.modal-texto-scroll p {
+    margin-bottom: 15px;
+}
+
+.botao-modal {
+    padding: 12px 30px;
+    background: linear-gradient(150deg,rgba(214, 180, 69, 1) 35%, rgba(255, 222, 112, 1) 75%);
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 15px;
+    text-decoration: none;
+    color: black;
+    transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.botao-modal:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+}
+
+/* Animação de entrada dos elementos do modal */
+.modal-overlay.ativo #modal-titulo {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+
+.modal-overlay.ativo .modal-texto-scroll {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+}
+
+.modal-overlay.ativo .botao-modal {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.4s;
+}
+
+.modal-overlay.ativo .botao-modal:hover {
+    transform: scale(1.05);
+    transition-delay: 0s;
+    transition-duration: 0.3s;
+}
+
+/* --- Ajuste Específico para Telas Médias (900px a 1350px) --- */
+/* Aplica o estilo de cartão para evitar vazamento de texto na imagem */
+@media (min-width: 901px) and (max-width: 1350px) {
+    .box-sobre-oraculo {
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(150deg, #231f13 0%, #3C0316 100%);
+        padding: 40px;
+        margin-top: 30px;
+        border: 2px solid #D4AF37;
+        border-radius: 20px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .img-fundo-p {
+        display: none;
+    }
+
+    .conteudo-sobre {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 100%;
+        padding: 0;
+    }
+
+    .texto-lorem {
+        column-count: 2;
+        padding-right: 0;
+        margin-top: 30px;
+    }
+
+    .texto-lorem p {
+        width: 100%;
+        margin-left: 0;
+        font-size: 15px;
+        padding: 0 10px;
+    }
+}
+
+/* --- Responsividade (Celulares, Tablets e Telas Menores) --- */
+
+@media (max-width: 1200px) {
+    .logo-oraculo-header {
+        margin-left: 0; /* Remove margem forçada em telas médias */
+    }
+    
+    header {
+        justify-content: space-between;
+        padding: 0 40px;
+    }
+
+    .meus-servicos {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 900px) {
+    /* Ajustes do Header Mobile */
+
+    html {
+        scroll-padding-top: 20px;
+    }
+
+    header {
+        flex-direction: row; /* Mantém logo e hambúrguer lado a lado */
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .logo-oraculo-header {
+        margin: 0;
+        width: 70px;
+    }
+
+    .menu-hamburguer {
+        display: block; /* Mostra o botão hambúrguer */
+    }
+
+    nav {
+        display: none; /* Esconde o menu por padrão */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #3C0316;
+        border-bottom: 2px solid #D4AF37;
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+
+    /* Classe que será adicionada pelo JS para mostrar o menu */
+    nav.ativo {
+        display: flex;
+        animation: descerMenu 0.3s ease-out forwards;
+    }
+
+    nav a {
+        padding: 0;
+        font-size: 20px;
+        text-align: center;
+        width: 100%;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    
+    @keyframes descerMenu {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Hero Section (Início) */
+    .img-oraculo {
+        width: 60%;
+        max-width: 240px; /* Reduzido conforme solicitado */
+        margin-top: 115px; /* Reduz margem pois o header não é mais fixo aqui */
+    }
+
+    /* Seção Sobre */
+    .box-sobre-oraculo {
+        display: flex;
+        flex-direction: column;
+        /* Substitui a imagem de fundo por um gradiente para o texto caber no celular */
+        background: linear-gradient(150deg, #231f13 0%, #3C0316 100%);
+        padding: 40px 20px;
+        margin-top: 210px;
+        border: 2px solid #D4AF37;
+        border-radius: 20px;
+    }
+
+    .img-fundo-p {
+        display: none; /* Esconde a imagem de fundo que não escala bem com texto vertical */
+    }
+
+    .conteudo-sobre {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 100%;
+        padding: 0;
+    }
+
+    .titulo-sobre {
+        font-size: 36px;
+        margin-top: 0;
+    }
+
+    .texto-lorem {
+        column-count: 1; /* Texto em uma única coluna */
+        padding-right: 0;
+        margin-top: 30px;
+    }
+
+    .texto-lorem p {
+        width: 100%;
+        margin-left: 0;
+        font-size: 16px;
+    }
+
+    /* Footer Mobile */
+    footer {
+        flex-direction: column;
+        /* Background e borda já definidos no estilo global */
+        padding: 30px;
+        width: 95%;
+    }
+
+    .links-footer, .contato-footer {
+        align-items: center;
+        margin: 15px 0;
+        order: unset;
+    }
+
+    .img-bola-7-footer {
+        margin-right: 90px;
+        padding-bottom: 15px;
+        width: 100px;
+        order: unset;
+    }
+
+.p-social-footer, .p-contato-footer {
+    margin-bottom: 16px;
+    margin-right: 38px;
+}
+
+.links-footer a, .contato-footer a {
+    margin-right: 35px;
+}
+
+    .p-footer-final {
+        margin-top: 20px;
+        order: unset;
+    }
+    
+    /* Modal Mobile */
+    .modal-card {
+        width: 90%;
+        height: 80vh;
+        padding: 20px;
+    }
+
+    .fechar-modal {
+        font-size: 45px; /* Aumenta o tamanho do X para facilitar o toque */
+        padding: 15px; /* Aumenta a área de toque */
+        top: 0;
+        right: 0;
+        z-index: 10; /* Garante prioridade sobre o conteúdo */
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo-sobre, .meus-servicos {
+        font-size: 28px;
+    }
+    
+    .seta {
+        font-size: 30px;
+        padding: 5px;
+    }
 }

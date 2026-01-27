@@ -2,6 +2,10 @@
 
 Landing Page desenvolvida para a oraculista **Ana Bea**, com foco em oferecer serviços de leitura de cartas, tarot e autoconhecimento. O projeto possui uma estética mística, elegante e totalmente responsiva.
 
+## 🔗 Link do Projeto
+
+<a>https://daniel-matosc.github.io/Oraculo-7/<a/>
+
 ## 🖥️ Sobre o Projeto
 
 Este site foi criado para apresentar os serviços de oráculo de forma interativa e imersiva. Ele utiliza vídeos de fundo, animações suaves e um layout adaptável para proporcionar uma experiência única ao usuário, seja no computador ou no celular.

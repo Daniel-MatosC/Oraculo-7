@@ -103,7 +103,7 @@ body.intro-active nav {
 }
 
 .img-oraculo {
-    width: 325px;
+    width: 280px;
     height: auto;
     margin-top: 125px;
     border-radius: 15px;
@@ -176,7 +176,7 @@ body.intro-active nav {
 
 .texto-lorem p {
     color: #baa271;
-    font-size: 15px;
+    font-size: 20px;
     text-align: justify;
     line-height: 1.5;
     width: 418px;
@@ -235,7 +235,7 @@ body.intro-active nav {
 
 .servico {
     position: absolute;
-    width: 280px; /* Largura da carta */
+    width: 228px; /* Largura da carta */
     height: 400px;
     background-color: transparent;
     text-align: center;
@@ -247,7 +247,7 @@ body.intro-active nav {
 }
 
 .servico img {
-    width: 100%;
+    width: 70%;
     height: auto;
     border-radius: 10px;
 }
@@ -255,7 +255,7 @@ body.intro-active nav {
 .servico p {
     color: #c09d4f;
     font-size: 20px;
-    margin-top: -61px;
+    margin-top: 2px;
     font-weight: bold;
     background-color: rgb(35 31 19 / 64%);
     padding: 3px 5px;
@@ -563,6 +563,124 @@ footer {
     transform: scale(1.05);
     transition-delay: 0s;
     transition-duration: 0.3s;
+}
+
+/* --- Responsividade para Telas Grandes (1594px a 2560px) --- */
+@media (min-width: 1594px) {
+    /* Ajustes Gerais de Layout */
+    .mae-header {
+        padding: 5px 0;
+    }
+
+    header {
+        gap: 60px;
+        max-width: 2400px;
+        margin: 0 auto;
+    }
+
+    .logo-oraculo-header {
+        margin-left: 0; /* Remove a margem percentual para centralizar melhor */
+        width: 140px;
+    }
+
+    nav a {
+        font-size: 26px;
+        padding-left: 60px;
+    }
+
+    /* Hero Section */
+    .box-principal {
+        min-height: 100vh;
+        justify-content: center;
+        padding-bottom: 100px;
+    }
+
+    .img-oraculo {
+        width: 400px;
+        margin-top: 180px;
+    }
+
+    .box-principal .botao-agendar {
+        font-size: 24px;
+        padding: 18px 45px;
+        margin-top: 50px;
+    }
+
+    /* Seção Sobre */
+    .box-sobre-oraculo {
+        margin-top: 150px;
+    }
+
+    .img-fundo-p {
+        max-width: 1800px; /* Permite que o fundo cresça mais */
+        width: 90%;
+    }
+
+    .conteudo-sobre {
+        width: 65%;
+        padding-top: 120px;
+    }
+
+    .titulo-sobre {
+        font-size: 65px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    .texto-lorem {
+        padding-right: 398px;
+    }
+
+    .texto-lorem p {
+        font-size: 28px;
+        width: 60%; /* Aumenta a largura do texto */
+        margin-left: 366px;
+        line-height: 1.7;
+    }
+
+    /* Serviços */
+    .meus-servicos {
+        font-size: 65px;
+        margin-left: 0;
+        text-align: center;
+        width: 100%;
+        margin-top: 100px;
+    }
+
+    .carrosel-servicos {
+        height: 600px; /* Aumenta altura do carrossel */
+    }
+
+    .servico {
+        width: 350px; /* Cartas maiores */
+        height: 550px;
+    }
+
+    .servico p {
+        font-size: 26px;
+    }
+
+    /* Footer */
+    footer {
+        max-width: 1800px;
+        padding: 50px 80px;
+    }
+
+    .p-social-footer, .p-contato-footer {
+        font-size: 32px;
+    }
+
+    .links-footer a, .contato-footer a {
+        font-size: 24px;
+    }
+
+    .img-bola-7-footer {
+        width: 180px;
+    }
+    
+    .p-footer-final {
+        font-size: 20px;
+    }
 }
 
 /* --- Ajuste Específico para Telas Médias (900px a 1350px) --- */
